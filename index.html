@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex: The Great Tome</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "leather-dark": "#1a0f0f",
+                        "wine-deep": "#2d0a0a",
+                        "aged-ink": "#3d3228",
+                        "gold-faded": "#c5a47e",
+                        "paper-dark": "#1e1b18",
+                        "accent-silk": "#8b0000",
+                        "primary-light": "#671921",
+                        "parchment": "#ede5d6",
+                        "gold-vibrant": "#b5a05b",
+                        "background-light": "#f6f3e9"
+                    },
+                    fontFamily: {
+                        "antique-display": ["Cinzel", "serif"],
+                        "antique-serif": ["IM Fell English", "serif"],
+                        "antique-body": ["Playfair Display", "serif"],
+                        "newsreader": ["Newsreader", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .leather-texture {
+                background: 
+                    radial-gradient(circle at 50% 0%, rgba(255, 200, 100, 0.05) 0%, transparent 50%),
+                    linear-gradient(45deg, #1a0f0f 25%, #2d0a0a 100%);
+            }
+            .leather-overlay::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: url("https://www.transparenttextures.com/patterns/black-leather.png");
+                opacity: 0.3;
+                pointer-events: none;
+                z-index: 1;
+            }
+            .parchment-texture {
+                background-color: #ede5d6;
+                background-image: url("https://www.transparenttextures.com/patterns/old-map.png");
+            }
+            .vignette {
+                background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.6) 100%);
+                pointer-events: none;
+            }
+            .aged-card {
+                @apply border border-opacity-10 backdrop-blur-sm transition-all active:scale-95 duration-200;
+            }
+            .ink-bleed {
+                filter: blur(0.3px) contrast(1.1);
+            }
+            .writing-vertical {
+                writing-mode: vertical-lr;
+            }
+        }
+        body {
+            @apply m-0 p-0 overflow-hidden bg-stone-900;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

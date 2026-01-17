@@ -1,0 +1,7 @@
+{
+  "name": "Base de conhecimento 1.0",
+  "description": "An interactive arcane journal and alchemy repository with light/dark themes, featuring an AI scribe and knowledge graph visualization.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
