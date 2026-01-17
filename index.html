@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codex: The Great Tome</title>
+    <title>Codice: The Great Tome</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -65,15 +65,18 @@
             .ink-bleed {
                 filter: blur(0.3px) contrast(1.1);
             }
-            .writing-vertical {
-                writing-mode: vertical-lr;
-            }
         }
         body {
             @apply m-0 p-0 overflow-hidden bg-stone-900;
         }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Estilos para impressão de PDF */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; overflow: visible !important; }
+            #root { height: auto !important; }
         }
     </style>
 <script type="importmap">
@@ -89,5 +92,7 @@
 </head>
 <body>
     <div id="root"></div>
+    <!-- CRITICAL: Carrega o código do app -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
